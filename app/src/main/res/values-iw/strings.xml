@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AnimalTracker</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="email_login">דואר אלקטרוני</string>
+    <string name="password_login">סיסמא</string>
+    <string name="log_in_button_text">התחברות</string>
+    <string name="send_to_sign_in_button">הרשמה</string>
+    <string name="new_email_text">מייל אלקטרוני</string>
+    <string name="new_password_text">סיסמא</string>
+    <string name="new_phone_number_text">מס טלפון</string>
+    <string name="new_full_name_text">שם מלא</string>
+    <string name="create_account_button">יצירת משתמש</string>
+    <string name="display_animal_of_the_day_button">חיה בהפתעה</string>
+    <string name="display_animals_button">הצגת חיות</string>
+    <string name="display_info_button">הצגת מידע</string>
+    <string name="phone_number_radio_button">מס טלפון</string>
+    <string name="name_radio_button">שם</string>
+    <string name="edit_space_text">טקסט מעודכן</string>
+    <string name="switch_to_hebrew">עבור לעברית</string>
+    <string name="switch_to_english">Switch to English</string>
+</resources>

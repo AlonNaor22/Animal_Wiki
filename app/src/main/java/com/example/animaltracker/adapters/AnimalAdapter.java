@@ -1,5 +1,6 @@
 package com.example.animaltracker.adapters;
 
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +9,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.animaltracker.R;
@@ -63,7 +65,22 @@ public class AnimalAdapter extends RecyclerView.Adapter<AnimalAdapter.MyViewHold
         textViewNameHebrew.setText(dataSet.get(position).getHname());
         imageView.setImageResource(dataSet.get(position).getImage());
 
+        // Add OnClickListener to navigate to the details page
+        holder.cardView.setOnClickListener(view -> {
+            Bundle bundle = new Bundle();
+            bundle.putString("animal_name", dataSet.get(position).getName());
+            bundle.putString("animal_hebrew_name", dataSet.get(position).getHname());
+            bundle.putString("animal_endangered_level", dataSet.get(position).getEndangeredLevel());
+            bundle.putString("animal_type", dataSet.get(position).getType());
+            bundle.putInt("animal_image", dataSet.get(position).getImage());
+
+            Navigation.findNavController(view).navigate(R.id.action_animals_recycleview_to_animal_Wiki_Solo, bundle);
+        });
     }
+
+
+
+
 
     @Override
     public int getItemCount() {

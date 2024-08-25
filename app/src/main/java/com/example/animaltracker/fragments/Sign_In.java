@@ -99,6 +99,50 @@ public class Sign_In extends Fragment {
                 });
     }
 
+    private boolean check_info(View frag_view) {
+        // Get user inputs
+        EditText emailEditText = frag_view.findViewById(R.id.NewEmailText);
+        EditText phoneEditText = frag_view.findViewById(R.id.NewPhoneText);
+        EditText passwordEditText = frag_view.findViewById(R.id.NewPasswordText);
+        EditText fullNameEditText = frag_view.findViewById(R.id.NewNameText);
+
+        String email = emailEditText.getText().toString().trim();
+        String phone = phoneEditText.getText().toString().trim();
+        String password = passwordEditText.getText().toString().trim();
+        String fullName = fullNameEditText.getText().toString().trim();
+
+        // Check email
+        if (!email.endsWith(".com") && !email.endsWith(".co.il")) {
+            Toast.makeText(getContext(), "Email must end with .com or .co.il", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        if (!email.contains("@") || email.indexOf("@") == 0) {
+            Toast.makeText(getContext(), "Email must contain '@' and it cannot be the first character", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+        // Check phone
+        if (!phone.matches("\\d{10}")) {
+            Toast.makeText(getContext(), "Phone must contain exactly 10 digits", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+        // Check password
+        if (!password.matches("[a-zA-Z0-9]{6,12}")) {
+            Toast.makeText(getContext(), "Password must be between 6 to 12 characters and contain only English letters or numbers", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+        // Check full name
+        if (!fullName.matches("[a-zA-Z\\s]+")) {
+            Toast.makeText(getContext(), "Full name can only contain letters and spaces", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+        return true;
+    }
+
+
     public void addData(View view){
         EditText emailT = view.findViewById(R.id.NewEmailText);
         EditText passwordT = view.findViewById(R.id.NewPasswordText);
@@ -130,7 +174,9 @@ public class Sign_In extends Fragment {
         create_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                sign_in_func(frag_view);
+                if (check_info(frag_view)) {
+                    sign_in_func(frag_view);
+                }
             }
         });
 

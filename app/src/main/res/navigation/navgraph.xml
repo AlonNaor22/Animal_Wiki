@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navgraph"
-    app:startDestination="@id/animal_Menu">
+    app:startDestination="@id/log_In">
 
     <fragment
         android:id="@+id/animal_Menu"
@@ -45,7 +45,11 @@
         android:id="@+id/animals_recycleview"
         android:name="com.example.animaltracker.fragments.animals_recycleview"
         android:label="fragment_animals_recycleview"
-        tools:layout="@layout/fragment_animals_recycleview" />
+        tools:layout="@layout/fragment_animals_recycleview" >
+        <action
+            android:id="@+id/action_animals_recycleview_to_animal_Wiki_Solo"
+            app:destination="@id/animal_Wiki_Solo" />
+    </fragment>
     <fragment
         android:id="@+id/display_Info"
         android:name="com.example.animaltracker.fragments.Display_Info"
@@ -56,4 +60,9 @@
         android:name="com.example.animaltracker.fragments.Animal_Of_The_Day_API"
         android:label="fragment_a_p_i__menu"
         tools:layout="@layout/fragment_animal_of_the_day_api" />
+    <fragment
+        android:id="@+id/animal_Wiki_Solo"
+        android:name="com.example.animaltracker.fragments.Animal_Wiki_Solo"
+        android:label="fragment_animal__wiki__solo"
+        tools:layout="@layout/fragment_animal__wiki__solo" />
 </navigation>

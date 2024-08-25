@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/animal_card"
     android:layout_width="match_parent"
-    android:layout_height="150dp">
+    android:layout_height="150dp"
+    android:background="#8BC34A"
+    app:cardBackgroundColor="#8BC34A">
 
     <LinearLayout
         android:layout_width="match_parent"

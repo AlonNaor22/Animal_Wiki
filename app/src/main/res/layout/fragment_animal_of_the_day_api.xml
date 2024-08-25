@@ -2,13 +2,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/wallpaper"
     tools:context=".fragments.Animal_Of_The_Day_API">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:gravity="center"
+        android:orientation="vertical"
         android:padding="16dp">
 
         <!-- Animal Name -->
@@ -16,20 +17,20 @@
             android:id="@+id/animal_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:paddingBottom="8dp"
             android:text="Animal Name"
             android:textSize="22sp"
-            android:textStyle="bold"
-            android:layout_marginTop="100dp"
-            android:paddingBottom="8dp" />
+            android:textStyle="bold" />
 
         <!-- Taxonomy Section -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:text="Taxonomy"
             android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_marginTop="20dp"/>
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/taxonomy_kingdom"
@@ -70,11 +71,11 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:paddingTop="16dp"
             android:text="Locations"
             android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_marginTop="20dp"
-            android:paddingTop="16dp" />
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/animal_locations"

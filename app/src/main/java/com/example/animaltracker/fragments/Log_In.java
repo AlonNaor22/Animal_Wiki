@@ -1,9 +1,11 @@
 package com.example.animaltracker.fragments;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.Navigation;
 
 import com.example.animaltracker.R;
@@ -16,8 +18,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.Switch;
 import android.widget.Toast;
+
+import java.util.Locale;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -36,6 +42,8 @@ public class Log_In extends Fragment {
     private String mParam2;
 
     private FirebaseAuth mAuth;
+    private boolean isHebrew = false; // Flag to track the current language
+
 
     public Log_In() {
         // Required empty public constructor
@@ -58,6 +66,9 @@ public class Log_In extends Fragment {
         fragment.setArguments(args);
         return fragment;
     }
+
+
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -94,6 +105,26 @@ public class Log_In extends Fragment {
 
     }
 
+    // Method to update the button text based on the current language
+    private void updateLanguageButtonText(Button button) {
+        if (isHebrew) {
+            button.setText(R.string.switch_to_english); // Switch to English
+        } else {
+            button.setText(R.string.switch_to_hebrew); // Switch to Hebrew
+        }
+    }
+
+    // Method to change the locale
+    private void setLocale(String lang) {
+        Locale locale = new Locale(lang);
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.locale = locale;
+        getResources().updateConfiguration(config, getResources().getDisplayMetrics());
+
+        // Refresh the fragment or activity to apply the language change
+        getActivity().recreate();
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -116,6 +147,31 @@ public class Log_In extends Fragment {
             @Override
             public void onClick(View v) {
                 Navigation.findNavController(frag_view).navigate(R.id.action_log_In_to_sign_In);
+            }
+        });
+
+        // Find the language change button
+        Button languageButton = frag_view.findViewById(R.id.language_button);
+
+        // Set an initial label for the button
+        updateLanguageButtonText(languageButton);
+
+        // Set a listener for the button
+        languageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (isHebrew) {
+                    // Switch to English
+                    setLocale("en");
+                } else {
+                    // Switch to Hebrew
+                    setLocale("he");
+                }
+                // Toggle the flag
+                isHebrew = !isHebrew;
+
+                // Update the button text
+                updateLanguageButtonText(languageButton);
             }
         });
 

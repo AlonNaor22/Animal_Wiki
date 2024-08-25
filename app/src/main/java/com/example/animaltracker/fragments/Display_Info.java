@@ -5,7 +5,11 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.animaltracker.R;
 import com.google.firebase.auth.FirebaseAuth;
@@ -26,6 +30,52 @@ public class Display_Info extends Fragment {
         // Required empty public constructor
     }
 
+    private void updateUserInfo(View frag_view) {
+        // Get Firebase user and reference
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user == null) {
+            Toast.makeText(getContext(), "User not logged in", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        String uid = user.getUid();
+        DatabaseReference userRef = FirebaseDatabase.getInstance().getReference("users").child(uid);
+
+        // Get references to UI elements
+        EditText updateText = frag_view.findViewById(R.id.update_text);
+        RadioGroup radioGroup = frag_view.findViewById(R.id.radioGroup);
+
+        String newText = updateText.getText().toString().trim();
+
+        // Get selected radio button ID
+        int selectedId = radioGroup.getCheckedRadioButtonId();
+
+        // If no radio button is selected
+        if (selectedId == -1) {
+            Toast.makeText(getContext(), "Please select a field to update", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        // Handle the selected radio button (Phone or Name only)
+        if (selectedId == R.id.radioButtonPhone) {
+            if (!newText.matches("\\d{10}")) {
+                Toast.makeText(getContext(), "Phone must contain exactly 10 digits", Toast.LENGTH_SHORT).show();
+                return;
+            }
+            // Update phone TextView and Firebase
+            TextView phoneTextView = frag_view.findViewById(R.id.textViewPhone);
+            phoneTextView.setText(newText);
+            userRef.child("phone").setValue(newText);
+        } else if (selectedId == R.id.radioButtonName) {
+            if (!newText.matches("[a-zA-Z\\s]+")) {
+                Toast.makeText(getContext(), "Name can only contain letters and spaces", Toast.LENGTH_SHORT).show();
+                return;
+            }
+            // Update name TextView and Firebase
+            TextView nameTextView = frag_view.findViewById(R.id.textViewName);
+            nameTextView.setText(newText);
+            userRef.child("name").setValue(newText);
+        }
+    }
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +96,15 @@ public class Display_Info extends Fragment {
 
         // Fetch and display current user info
         loadCurrentUserInfo();
+
+        Button updateButton = view.findViewById(R.id.update_button);
+        updateButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                updateUserInfo(view);
+            }
+        });
+
 
         return view;
     }

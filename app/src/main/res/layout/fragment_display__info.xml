@@ -3,12 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/pencil"
     android:orientation="vertical"
+    android:gravity="center"
     tools:context=".fragments.Display_Info">
 
     <!-- TODO: Update blank fragment layout -->
-
-
 
 
     <TextView
@@ -16,6 +16,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Email"
+        android:layout_marginBottom="30dp"
         android:textSize="18sp" />
 
     <TextView
@@ -23,6 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Name"
+        android:layout_marginBottom="30dp"
         android:textSize="18sp" />
 
     <TextView
@@ -30,6 +32,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Phone"
+        android:layout_marginBottom="30dp"
         android:textSize="18sp" />
 
     <TextView
@@ -37,41 +40,38 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Password"
+        android:layout_marginBottom="30dp"
         android:textSize="18sp" />
 
 
-
     <EditText
+        android:id="@+id/update_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="edit space"/>
+        android:layout_marginBottom="100dp"
+        android:hint="@string/edit_space_text" />
 
     <RadioGroup
+        android:id="@+id/radioGroup"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-
-        <RadioButton
-            android:id="@+id/radioButtonEmail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Email" />
-
-        <RadioButton
-            android:id="@+id/radioButtonPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Password" />
+        android:layout_height="wrap_content">
 
         <RadioButton
             android:id="@+id/radioButtonPhone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Phone Number" />
+            android:text="@string/phone_number_radio_button" />
 
         <RadioButton
             android:id="@+id/radioButtonName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Name" />
+            android:text="@string/name_radio_button" />
     </RadioGroup>
+
+    <Button
+        android:id="@+id/update_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Update" />
 </LinearLayout>
