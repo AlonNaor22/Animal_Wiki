@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navgraph"
+    app:startDestination="@id/animal_Menu">
+
+    <fragment
+        android:id="@+id/animal_Menu"
+        android:name="com.example.animaltracker.fragments.Animal_Menu"
+        android:label="fragment_animal__menu"
+        tools:layout="@layout/fragment_animal__menu" >
+        <action
+            android:id="@+id/action_animal_Menu_to_animals_recycleview"
+            app:destination="@id/animals_recycleview" />
+        <action
+            android:id="@+id/action_animal_Menu_to_display_Info"
+            app:destination="@id/display_Info" />
+        <action
+            android:id="@+id/action_animal_Menu_to_API_Menu"
+            app:destination="@id/API_Menu" />
+    </fragment>
+    <fragment
+        android:id="@+id/log_In"
+        android:name="com.example.animaltracker.fragments.Log_In"
+        android:label="fragment_log__in"
+        tools:layout="@layout/fragment_log__in" >
+        <action
+            android:id="@+id/action_log_In_to_animal_Menu"
+            app:destination="@id/animal_Menu" />
+        <action
+            android:id="@+id/action_log_In_to_sign_In"
+            app:destination="@id/sign_In" />
+    </fragment>
+    <fragment
+        android:id="@+id/sign_In"
+        android:name="com.example.animaltracker.fragments.Sign_In"
+        android:label="fragment_sign__in"
+        tools:layout="@layout/fragment_sign__in" >
+        <action
+            android:id="@+id/action_sign_In_to_log_In"
+            app:destination="@id/log_In" />
+    </fragment>
+    <fragment
+        android:id="@+id/animals_recycleview"
+        android:name="com.example.animaltracker.fragments.animals_recycleview"
+        android:label="fragment_animals_recycleview"
+        tools:layout="@layout/fragment_animals_recycleview" />
+    <fragment
+        android:id="@+id/display_Info"
+        android:name="com.example.animaltracker.fragments.Display_Info"
+        android:label="fragment_display__info"
+        tools:layout="@layout/fragment_display__info" />
+    <fragment
+        android:id="@+id/API_Menu"
+        android:name="com.example.animaltracker.fragments.Animal_Of_The_Day_API"
+        android:label="fragment_a_p_i__menu"
+        tools:layout="@layout/fragment_animal_of_the_day_api" />
+</navigation>

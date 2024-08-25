@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragments.Display_Info">
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+
+
+    <TextView
+        android:id="@+id/textViewEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textViewName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textViewPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Phone"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textViewPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Password"
+        android:textSize="18sp" />
+
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="edit space"/>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <RadioButton
+            android:id="@+id/radioButtonEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Email" />
+
+        <RadioButton
+            android:id="@+id/radioButtonPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Password" />
+
+        <RadioButton
+            android:id="@+id/radioButtonPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Phone Number" />
+
+        <RadioButton
+            android:id="@+id/radioButtonName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Name" />
+    </RadioGroup>
+</LinearLayout>

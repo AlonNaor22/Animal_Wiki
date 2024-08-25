@@ -1,0 +1,87 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.Animal_Of_The_Day_API">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="16dp">
+
+        <!-- Animal Name -->
+        <TextView
+            android:id="@+id/animal_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Animal Name"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_marginTop="100dp"
+            android:paddingBottom="8dp" />
+
+        <!-- Taxonomy Section -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Taxonomy"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"/>
+
+        <TextView
+            android:id="@+id/taxonomy_kingdom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Kingdom: " />
+
+        <TextView
+            android:id="@+id/taxonomy_phylum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Phylum: " />
+
+        <TextView
+            android:id="@+id/taxonomy_class"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Class: " />
+
+        <TextView
+            android:id="@+id/taxonomy_order"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Order: " />
+
+        <TextView
+            android:id="@+id/taxonomy_family"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Family: " />
+
+        <!-- Locations -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Locations"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:paddingTop="16dp" />
+
+        <TextView
+            android:id="@+id/animal_locations"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Locations: " />
+
+    </LinearLayout>
+</ScrollView>
