@@ -30,7 +30,7 @@ public class Animal_Of_The_Day_API extends Fragment {
             "Cassowary", "Cat", "Caterpillar", "Cheetah", "Chicken", "Chimpanzee", "Chinchilla", "Clownfish", "Cobra",
             "Cockroach", "Coyote", "Crab", "Crocodile", "Crow", "Deer", "Dingo", "Dolphin", "Donkey", "Dove",
             "Dragonfly", "Eagle", "Echidna", "Elephant", "Emu", "Falcon", "Ferret", "Flamingo", "Fox", "Frog", "Gazelle"
-    };
+    };//array to change the random api command that suddenly stopped working
 
     private static int randomIndex = (int) (Math.random() * animalNames.length); // Generates a random number between 0 (inclusive) and animalNames.length (exclusive)
 

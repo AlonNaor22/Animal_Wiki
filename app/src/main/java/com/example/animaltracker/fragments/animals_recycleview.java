@@ -35,7 +35,7 @@ public class animals_recycleview extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    //recycleview data
+    //recyclerview data
     private ArrayList<AnimalModel> dataSet;
     private RecyclerView recyclerView;
     private LinearLayoutManager layoutManager;

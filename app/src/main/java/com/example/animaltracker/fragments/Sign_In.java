@@ -39,7 +39,7 @@ public class Sign_In extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    private FirebaseAuth mAuth;
+    private FirebaseAuth mAuth; // firebase database
 
     public Sign_In() {
         // Required empty public constructor
@@ -73,6 +73,7 @@ public class Sign_In extends Fragment {
         }
     }
 
+    // the function that handle the sign in of the user after the data is consider verified
     public void sign_in_func(View view){
 
         EditText emailT = view.findViewById(R.id.NewEmailText);
@@ -99,6 +100,7 @@ public class Sign_In extends Fragment {
                 });
     }
 
+    //the function receive the information from the edittext and make sure it is valid
     private boolean check_info(View frag_view) {
         // Get user inputs
         EditText emailEditText = frag_view.findViewById(R.id.NewEmailText);
@@ -143,6 +145,7 @@ public class Sign_In extends Fragment {
     }
 
 
+    //this function updated the firebase database with the new user information
     public void addData(View view){
         EditText emailT = view.findViewById(R.id.NewEmailText);
         EditText passwordT = view.findViewById(R.id.NewPasswordText);

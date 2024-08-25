@@ -30,6 +30,7 @@ public class Display_Info extends Fragment {
         // Required empty public constructor
     }
 
+    //the function update according to the user decision and make sure the new information is valid
     private void updateUserInfo(View frag_view) {
         // Get Firebase user and reference
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
@@ -109,6 +110,7 @@ public class Display_Info extends Fragment {
         return view;
     }
 
+    //update the fragment with the current user information
     private void loadCurrentUserInfo() {
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if (currentUser != null) {

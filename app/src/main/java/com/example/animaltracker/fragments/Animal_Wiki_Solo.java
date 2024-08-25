@@ -84,7 +84,7 @@ public class Animal_Wiki_Solo extends Fragment {
 
             // Set the text to display animal details
             nameTextView.setText("Name: " + animalName);
-            hebrewNameTextView.setText("Hebrew Name: " + animalHebrewName);
+            hebrewNameTextView.setText("שם בעברית: " + animalHebrewName);
             endangeredTextView.setText("Endangered Level: " + animalEndangeredLevel);
             typeTextView.setText("Type: " + animalType);
             animalImageView.setImageResource(animalImage);

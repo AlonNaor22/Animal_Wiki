@@ -41,7 +41,7 @@ public class Log_In extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    private FirebaseAuth mAuth;
+    private FirebaseAuth mAuth; //firebase database
     private boolean isHebrew = false; // Flag to track the current language
 
 
@@ -67,9 +67,6 @@ public class Log_In extends Fragment {
         return fragment;
     }
 
-
-
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -81,6 +78,7 @@ public class Log_In extends Fragment {
 
     }
 
+    //function to verify the user information and allow access to the app
     public void log_in_func(View view){
 
         EditText emailT = view.findViewById(R.id.emailText);
@@ -150,13 +148,9 @@ public class Log_In extends Fragment {
             }
         });
 
-        // Find the language change button
+        //language change button
         Button languageButton = frag_view.findViewById(R.id.language_button);
-
-        // Set an initial label for the button
         updateLanguageButtonText(languageButton);
-
-        // Set a listener for the button
         languageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -174,7 +168,6 @@ public class Log_In extends Fragment {
                 updateLanguageButtonText(languageButton);
             }
         });
-
 
 
         return frag_view;
